@@ -14,17 +14,17 @@ app.engine('handlebars', exphbs({
     renderIcon(category) {
       switch (category) {
         case '家居物業':
-          return `<i class="fas fa-home fa-3x"></i>`
+          return `<i class="fas fa-home fa-3x" style="padding-right: 11px;"></i>`
         case '交通出行':
-          return `<i class="fas fa-shuttle-van fa-3x"></i>`
+          return `<i class="fas fa-shuttle-van fa-3x" style="padding-right: 5px;"></i>`
         case '休閒娛樂':
-          return `<i class="fas fa-grin-beam fa-3x"></i>`
+          return `<i class="fas fa-grin-beam fa-3x" style="padding-right: 18px;"></i>`
         case '餐飲食品':
-          return `<i class="fas fa-utensils fa-3x"></i>`
+          return `<i class="fas fa-utensils fa-3x" style="padding-right: 26px;"></i>`
         case '其他':
-          return `<i class="fas fa-pen fa-3x"></i>`
+          return `<i class="fas fa-pen fa-3x" style="padding-right: 17px;"></i>`
         default:
-          return `<i class="fas fa-pen fa-3x"></i>`
+          return `<i class="fas fa-pen fa-3x" style="padding-right: 17px;"></i>`
       }
     }
   }
