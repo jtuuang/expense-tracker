@@ -26,6 +26,9 @@ app.engine('handlebars', exphbs({
         default:
           return `<i class="fas fa-pen fa-3x" style="padding-right: 17px;"></i>`
       }
+    },
+    isEquals(selectedCategory, categoryName, options) {
+      return (selectedCategory === categoryName) ? options.fn(this) : options.inverse(this)
     }
   }
 }))
