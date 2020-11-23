@@ -43,6 +43,29 @@ app.post('/records', (req, res) => {
     .catch(error => console.log(error))
 })
 
+app.get('/records/:id/edit', (req, res) => {
+  const id = req.params.id
+  return Record.findById(id)
+    .lean()
+    .then(record => res.render('edit', { record }))
+    .catch(error => console.log(error))
+})
+
+app.put('/records/:id', (req, res) => {
+  const id = req.params.id
+  const { name, date, category, amount } = req.body
+  return Record.findById(id)
+    .then(record => {
+      record.name = name
+      record.date = date
+      record.category = category
+      record.amount = amount
+      record.save()
+    })
+    .then(() => res.redirect('/'))
+    .catch(error => console.log(error))
+})
+
 app.listen(3000, () => {
   console.log('The server is running on http://localhost:3000')
 })
