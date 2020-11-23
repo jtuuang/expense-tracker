@@ -6,6 +6,7 @@
 - 使用者可以新增支出紀錄。
 - 使用者可以修改支出紀錄。
 - 使用者可以刪除支出紀錄。
+- 使用者可以在首頁可以根據支出「類別」篩選支出。
 
 ## 安裝
 - 開啟終端機(Terminal)cd 到存放專案本機位置並執行: git clone https://github.com/jtuuang/expense-tracker.git
