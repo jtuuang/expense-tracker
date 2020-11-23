@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="col-12 text-center">
+    <div class="btn-group">
+      <button class="btn btn-outline-dark btn-lg dropdown-toggle" type="button" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        類別
+      </button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="/">家居物業<i class="fas fa-home"></i></a>
+        <a class="dropdown-item" href="/">交通出行<i class="fas fa-shuttle-van"></i></a>
+        <a class="dropdown-item" href="/">休閒娛樂<i class="fas fa-grin-beam"></i></a>
+        <a class="dropdown-item" href="/">餐飲食品<i class="fas fa-utensils"></i></a>
+        <a class="dropdown-item" href="/">其他<i class="fas fa-pen"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row mt-5">
+  <div class="col-12 text-center">
+    總金額：
+    <span>{{totalAmount}}</span>
+  </div>
+</div>
+
+<ul>
+  {{#each records}}
+  <li>
+    {{this.category}}
+    {{this.name}}
+    {{this.date}}
+    {{this.amount}}
+  </li>
+  {{/each}}
+</ul>
