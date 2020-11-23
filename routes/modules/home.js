@@ -12,7 +12,7 @@ function checkSort(sort, res) {
       records.forEach(record => totalAmount += record.amount)
       res.render('index', { records, totalAmount })
     })
-    .catch(error => console.log('error'))
+    .catch(error => console.log(error))
 }
 
 router.get('/', (req, res) => {
