@@ -27,6 +27,22 @@ app.get('/', (req, res) => {
     .catch(error => console.log(error))
 })
 
+app.get('/records/new', (req, res) => {
+  return res.render('new')
+})
+
+app.post('/records', (req, res) => {
+  const { name, date, category, amount } = req.body
+  return Record.create({
+    name,
+    date,
+    category,
+    amount
+  })
+    .then(() => res.redirect('/'))
+    .catch(error => console.log(error))
+})
+
 app.listen(3000, () => {
   console.log('The server is running on http://localhost:3000')
 })
