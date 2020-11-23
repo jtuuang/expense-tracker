@@ -8,7 +8,28 @@ require('./config/mongoose')
 
 const app = express()
 
-app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
+app.engine('handlebars', exphbs({
+  defaultLayout: 'main',
+  helpers: {
+    renderIcon(category) {
+      switch (category) {
+        case '家居物業':
+          return `<i class="fas fa-home fa-3x"></i>`
+        case '交通出行':
+          return `<i class="fas fa-shuttle-van fa-3x"></i>`
+        case '休閒娛樂':
+          return `<i class="fas fa-grin-beam fa-3x"></i>`
+        case '餐飲食品':
+          return `<i class="fas fa-utensils fa-3x"></i>`
+        case '其他':
+          return `<i class="fas fa-pen fa-3x"></i>`
+        default:
+          return `<i class="fas fa-pen fa-3x"></i>`
+      }
+    }
+  }
+}))
+
 app.set('view engine', 'handlebars')
 
 app.use(bodyParser.urlencoded({ extended: true }))

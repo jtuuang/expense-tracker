@@ -6,11 +6,11 @@
         類別
       </button>
       <div class="dropdown-menu">
-        <a class="dropdown-item" href="/">家居物業<i class="fas fa-home fa-3x"></i></a>
-        <a class="dropdown-item" href="/">交通出行<i class="fas fa-shuttle-van fa-3x"></i></a>
-        <a class="dropdown-item" href="/">休閒娛樂<i class="fas fa-grin-beam fa-3x"></i></a>
-        <a class="dropdown-item" href="/">餐飲食品<i class="fas fa-utensils fa-3x"></i></a>
-        <a class="dropdown-item" href="/">其他<i class="fas fa-pen fa-3x"></i></a>
+        <a class="dropdown-item" href="/">家居物業</a>
+        <a class="dropdown-item" href="/">交通出行</a>
+        <a class="dropdown-item" href="/">休閒娛樂</a>
+        <a class="dropdown-item" href="/">餐飲食品</a>
+        <a class="dropdown-item" href="/">其他</a>
       </div>
     </div>
   </div>
@@ -28,10 +28,10 @@
   <li class="list-group-item">
     <div class="row">
       <div class="col-8">
-        <div class="d-flex justify-content-around">
+        <div class="d-flex justify-content-between">
           <div class="details d-flex">
-            <i class="fas fa-utensils fa-3x"></i>
-            <div class="d-flex flex-column">
+            {{#renderIcon this.category}}{{/renderIcon}}
+            <div class="d-flex flex-column ml-2">
               <div class="div">{{this.name}}</div>
               <div class="div">{{this.date}}</div>
             </div>
@@ -41,7 +41,7 @@
           </div>
         </div>
       </div>
-      <div class="col-4">
+      <div class="col-4 text-right">
         <a href="/records/{{this._id}}/edit" class="btn btn-outline-dark">修改</a>
         <form action="/records/{{this._id}}?_method=DELETE" method="POST" style="display: inline">
           <button type="submit" class="btn btn-outline-danger">delete</button>
